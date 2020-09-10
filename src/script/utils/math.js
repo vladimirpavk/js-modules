@@ -1,3 +1,5 @@
-export const resetValue = value=>value=0;
-export const addValue = (value, increment)=>value+increment;
-export const subValue = (value, decrement)=>value-decrement;
+define({
+    resetValue: value=>value=0,
+    addValue: (value, increment)=>value+increment,
+    subValue: (value, decrement)=>value-decrement
+})
