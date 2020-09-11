@@ -1,5 +1,5 @@
-define(["utils/math"], (math)=>{    
-    let val = 1;
+define(["require.config", "math"], (math)=>{    
+  /*   let val = 1;
 
     return{
         initializeCounter: ()=>{        
@@ -22,12 +22,9 @@ define(["utils/math"], (math)=>{
                 val = math.subValue(val, 5);
             })
 
-            if(document.getElementsByClassName('nextPageButton')[0]){
-                document.getElementsByClassName('nextPageButton')[0].addEventListener('click', (event)=>{
-                    //console.log('sdfsdf');
-                    window.location="2page.html";
-                })
-            }      
+            document.getElementsByClassName('nextPageButton')[0].addEventListener('click', (event)=>{                
+                window.location="2page.html";
+            })            
         }
-    }
+    } */
 })
