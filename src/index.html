@@ -7,7 +7,7 @@
     <title>js-modules</title>
     <link rel="stylesheet" href="./css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Kufam:ital,wght@1,900&display=swap" rel="stylesheet">    
-    <script data-main="script/main1" src="script/lib/require.js"></script>
+    <script src="script/lib/require.js"></script>
 </head>
 
 <body>
@@ -20,12 +20,13 @@
             <button id="minusButton">-5</button>
         </div>
         <button class="nextPageButton">Next Page</button>
-    </div>        
- <!--    <script>
-        requirejs(['main'], (main)=>{    
-            window.onload = main.initializeCounter();
-        });
-    </script> -->
+    </div>  
+    <script>
+        requirejs(['./script/main1'], (main1)=>{
+           console.log(main1);
+           window.onLoad = main1.init();
+        })
+    </script>          
 </body>
 
 </html>

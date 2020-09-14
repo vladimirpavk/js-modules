@@ -1,36 +1,37 @@
-requirejs(['require.config'], ()=>{
-    requirejs(['math'], ()=>{
+requirejs(['./script/require.config.js'], ()=>{
+    requirejs(['math', 'htmlParser'], (math, htmlParser)=>{
+        console.log(math, htmlParser);
+        console.log(htmlParser.getBody());
+        let val = 1;
         
+        define(
+            ()=>{
+                return{
+                    init: ()=>{
+                        let element = htmlParser.getCounter();
+                        element.innerHTML=val;
+                        setInterval(()=>{
+                            val = val + 1;
+                            element.innerHTML = val; 
+                        },1000);            
+                    
+                        htmlParser.getResetButton().addEventListener('click', (event)=>{                
+                            val = math.resetValue(val);
+                        })
+                    
+                        htmlParser.getPlusButton().addEventListener('click', (event)=>{
+                            val = math.addValue(val, 5);
+                        })
+                    
+                        htmlParser.getMinusButton().addEventListener('click', (event)=>{
+                            val = math.subValue(val, 5);
+                        })
+            
+                        htmlParser.getNextPageButton.addEventListener('click', (event)=>{                
+                            htmlParser.getWindow().location="2page.html";
+                        })                                
+                    }
+                }
+            });
+        })
     })
-})
-
-//define(["require.config",'math'], (math)=>{    
-   /*  let val = 1;
-
-    return{
-        initializeCounter: ()=>{        
-            let element = document.getElementsByClassName('counter')[0];
-            element.innerHTML=val;
-            setInterval(()=>{
-                val = val + 1;
-                element.innerHTML = val; 
-            },1000);            
-        
-            document.getElementById('resetButton').addEventListener('click', (event)=>{                
-                val = math.resetValue(val);
-            })
-        
-            document.getElementById('plusButton').addEventListener('click', (event)=>{
-                val = math.addValue(val, 5);
-            })
-        
-            document.getElementById('minusButton').addEventListener('click', (event)=>{
-                val = math.subValue(val, 5);
-            })
-
-            document.getElementsByClassName('nextPageButton')[0].addEventListener('click', (event)=>{                
-                window.location="2page.html";
-            })            
-        }
-    } */
-//})
