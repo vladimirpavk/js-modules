@@ -5,6 +5,7 @@ requirejs.config({
         htmlParser: './utils/htmlParser',
         main1: 'main1',
         main2: 'main2',
-        counter: './utils/counter'
+        counter: './utils/counter',
+        counterBase: './utils/counterBase'
     }
 })
